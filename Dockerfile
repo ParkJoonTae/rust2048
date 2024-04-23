@@ -1,4 +1,4 @@
-FROM rust:1.47.0
+FROM rust:1.77.2
 
 WORKDIR /app
 
@@ -10,4 +10,4 @@ RUN wasm-pack build --target web --out-name wasm --out-dir ./static
 
 WORKDIR /app/static
 
-CMD ["python", "-m", "SimpleHTTPServer"]
+CMD ["python3", "-m", "flask", "run", "--host=0.0.0.0"] 
