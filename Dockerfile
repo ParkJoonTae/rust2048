@@ -10,4 +10,4 @@ RUN wasm-pack build --target web --out-name wasm --out-dir ./static
 
 WORKDIR /app/static
 
-CMD ["python3", "-m", "flask", "run", "--host=0.0.0.0"] 
+CMD ["python", "-m", "SimpleHTTPServer"]
