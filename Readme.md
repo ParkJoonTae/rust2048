@@ -24,9 +24,3 @@ docker run -it --rm -p 8080:8080 wasm-2048
 Then open http://127.0.0.1:8080.
 
 <hr />
-
-<p align="center">
-  <a target="_blank" href="https://dev.family?utm_source=n7&utm_medium=github&utm_campaign=2048">
-    <img src="https://github.com/dev-family/wasm-2048/blob/master/images/dev-family.png">
-  </a>
-</p>
