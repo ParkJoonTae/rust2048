@@ -17,10 +17,10 @@
 The simplest way to run is via docker:
 
 ```
-docker build -t wasm-2048 .
-docker run -it --rm -p 8080:8080 wasm-2048
+sudo docker build -t wasm-2048 .
+sudo docker run -d --name 2048 -p 8090:80 wasm-2048
 ```
 
-Then open http://127.0.0.1:8080.
+Then open http://127.0.0.1:8090.
 
 <hr />
