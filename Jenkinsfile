@@ -14,7 +14,8 @@ pipeline {
     }
 
     stage("Checkout from SCM") {
-        steps { # 'github'는 전 단계에서 Jenkins Credentials에 정의 
+	// 'github'는 전 단계에서 Jenkins Credentials에 정의 
+        steps {
             git branch: 'main', credentialsId: 'github', url: 'https://github.com/ParkJoonTae/rust2048.git'
         }
     }
