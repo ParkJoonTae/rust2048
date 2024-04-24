@@ -21,8 +21,8 @@ pipeline {
     
 	stage("Build App"){
 	    steps{
-		sh "sudo docker build -t wasm-2048 -f /home/jeff2152024/wasm-2048/Dockerfile ."
-		sh "sudo docker run -d --name 2048 -p 8090:80 wasm-2048"
+		sh "docker build -t wasm-2048 -f /home/jeff2152024/wasm-2048/Dockerfile ."
+		sh "docker run -d --name 2048 -p 8090:80 wasm-2048"
 	    }
 	}
     }
