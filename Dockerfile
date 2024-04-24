@@ -1,13 +1,12 @@
-FROM rust:1.77.2
-
+FROM rust:1.77.2 as wasm-builder
 WORKDIR /app
-
 RUN cargo install wasm-pack
-
 COPY . .
+#RUN wasm-pack build --target web --out-name wasm --out-dir ./static
+#WORKDIR /app/static
+RUN wasm-pack build --target web --out-name wasm --out-dir .
 
-RUN wasm-pack build --target web --out-name wasm --out-dir ./static
-
-WORKDIR /app/static
-
-CMD ["python", "-m", "SimpleHTTPServer"]
+FROM nginx as web
+COPY --from=wasm-builder ./app /usr/share/nginx/html
+WORKDIR /usr/share/nginx/html
+CMD ["nginx", "-g", "daemon off;"]
