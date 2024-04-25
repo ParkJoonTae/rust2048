@@ -22,9 +22,9 @@ pipeline {
 	stage ("Build App") {
            steps {
                script {
-		    sh "docker build -t wasm-2048 -f /home/jeff2152024/wasm-2048/Dockerfile ."
-		    sh "docker run -d --name 2048 -p 8090:80 wasm-2048"
-                    sh "docker rmi wasm-2048"
+		    sh "docker build -t rust2048 -f /home/jeff2152024/rust2048/Dockerfile ."
+		    sh "docker run -d --name 2048 -p 8090:80 rust2048"
+                    sh "docker rmi rust2048"
                }
           }
        }
