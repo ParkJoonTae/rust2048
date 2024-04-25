@@ -24,7 +24,6 @@ pipeline {
                script {
 		    sh "sudo docker build -t rust2048 -f /home/jeff2152024/rust2048/Dockerfile ."
 		    sh "sudo docker run -d --name 2048 -p 8090:80 rust2048"
-                    sh "sudo docker rmi rust2048"
                }
           }
        }
